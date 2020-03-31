@@ -6,3 +6,20 @@ body {
     margin-left: 2em;
     margin-right: 2em;
 }
+
+.enVivo {
+    animation: anim 1s infinite;
+}
+
+@keyframes anim {
+    from {
+        background-color: #343a40;
+    }
+    to {
+        background-color: #dc3545;
+    }
+}
+
+.nav .nav-item:hover {
+    background-color: #dc3545;
+}
