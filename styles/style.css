@@ -23,3 +23,8 @@ body {
 .nav .nav-item:hover {
     background-color: #dc3545;
 }
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
