@@ -45,3 +45,19 @@ h1 {
 .card-header a {
     color: white;
 }
+
+.apuesta_local,
+.apuesta_empate,
+.apuesta_visitante {
+    background-color: #343a40;
+    color: white;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.apuesta_local:hover,
+.apuesta_empate:hover,
+.apuesta_visitante:hover {
+    cursor: pointer;
+    background-color: #dc3545;
+}

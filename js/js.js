@@ -40,7 +40,7 @@ $(document).ready(function() {
         </div>
     </div>`;
     }
-    document.getElementById("dato_grupo1").innerHTML = html;
-    document.getElementById("dato_grupo2").innerHTML = html;
-    document.getElementById("dato_grupo3").innerHTML = html;
+    $("#dato_grupo1")[0].innerHTML = html;
+    $("#dato_grupo2")[0].innerHTML = html;
+    $("#dato_grupo3")[0].innerHTML = html;
 });
