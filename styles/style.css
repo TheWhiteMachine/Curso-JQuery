@@ -24,6 +24,10 @@ body {
     background-color: #dc3545;
 }
 
+nav button:hover {
+    background-color: #343a40;
+}
+
 .carousel-inner img {
     width: 100%;
     height: 100%;
