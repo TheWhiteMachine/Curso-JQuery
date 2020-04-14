@@ -87,3 +87,14 @@ function apostar(opcion, elem) {
     $("#apuestas_realizadas")[0].innerHTML += html_apuesta;
     this.calcularPremio();
 }
+
+function calcularPremio() {
+    dividendo = 1;
+    for (i = 0; i < apuestas.length; i++) {
+        dividendo = dividendo * apuestas[i].indice;
+    }
+    $("#dividendo")[0].value = dividendo.toFixed(2);
+    let dineroApostado = $("#dinero_apuesta")[0].value;
+    premio = dineroApostado * dividendo;
+    $("#premio")[0].value = premio.toFixed(2);
+}
