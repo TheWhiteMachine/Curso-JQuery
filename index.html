@@ -121,6 +121,40 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-4 jugadas">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Mis Jugadas</h4>
+                    </div>
+                    <div class="card-body" id="apuestas_realizadas">
+
+                    </div>
+                    <div class="card-footer">
+                        <form>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text open_Sans">Apuesta UYU$</span>
+                                </div>
+                                <input type="number" id="dinero_apuesta" class="form-control" value="50" min="50" max="100000" onchange=calcularPremio()>
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text open_Sans">Dividendo</span>
+                                </div>
+                                <input type="number" id="dividendo" class="form-control" disabled>
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text open_Sans">Premio</span>
+                                </div>
+                                <input type="number" id="premio" class="form-control" disabled>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -27,16 +27,17 @@ $(document).ready(function() {
             </a>
             ${partido.hora}
         </span>
-        <div class="col-4 zoom apuesta_local d-flex justify-content-between ${partido.id*partido.igl}" onclick="apostar(1, this)" id="${partido.id}">
+        <div class="col-4 zoom apuesta_local d-flex justify-content-between ${partido.id*partido.igl}" id="${partido.id}" onclick="apostar(1, this)">
             <span class="local p-2">${partido.local}</span>
-        <span class="igl p-2">${partido.igl}</span>
+            <span class="igl p-2">${partido.igl}</span>
         </div>
         <div class="col-2 zoom d-flex justify-content-between apuesta_empate ${partido.id*partido.ie}" id="${partido.id}" onclick="apostar(2, this)">
-        <span class="vs p-2">X</span><span class="ie p-2">${partido.ie}</span>
+            <span class="vs p-2">X</span>
+            <span class="ie p-2">${partido.ie}</span>
         </div>
         <div class="col-4 zoom d-flex justify-content-between apuesta_visitante ${partido.id*partido.igv}" id="${partido.id}" onclick="apostar(3, this)">
-        <span class="visitante p-2">${partido.visitante}</span>
-        <span class="igv p-2">${partido.igv}</span>
+            <span class="visitante p-2">${partido.visitante}</span>
+            <span class="igv p-2">${partido.igv}</span>
         </div>
     </div>`;
     }
@@ -44,3 +45,45 @@ $(document).ready(function() {
     $("#dato_grupo2")[0].innerHTML = html;
     $("#dato_grupo3")[0].innerHTML = html;
 });
+
+let apuestas = [];
+let dividendo = 0;
+let premio = 0;
+
+function apostar(opcion, elem) {
+    let ap = apuestas.filter(function(value) { return value.id_juego == elem.id; });
+    let marcador = elem.getElementsByTagName('span')[1].innerHTML;
+    if (ap.length > 0) {
+        if (ap[0].indice == marcador) { return false; } else {
+            console.log(ap);
+            this.eliminar_apuesta(ap[0].id);
+        }
+    }
+    let juego = datos.filter(function(value) { return value.id == elem.id; })[0];
+    elem.classList.add('fondo_rojo');
+    let apuesta;
+    if (opcion == 1) { apuesta = { 'equipos': juego.local + ' VS ' + juego.visitante, 'jugada': 'Gana ' + juego.local, 'indice': juego.igl, 'id_juego': juego.id, 'id': juego.id * 10 + opcion } }
+    if (opcion == 2) { apuesta = { 'equipos': juego.local + ' VS ' + juego.visitante, 'jugada': 'Empate', 'indice': juego.ie, 'id_juego': juego.id, 'id': juego.id * 10 + opcion } }
+    if (opcion == 3) { apuesta = { 'equipos': juego.local + ' VS ' + juego.visitante, 'jugada': 'Gana ' + juego.visitante, 'indice': juego.igv, 'id_juego': juego.id, 'id': juego.id * 10 + opcion } }
+    apuestas.push(apuesta);
+
+    let html_apuesta = `
+          <div class="card" id="apuesta${apuesta.id}">
+            <div class="row">
+              <div class="col-10">
+                <div id="equipos">${apuesta.equipos}</div>
+              </div>
+              <div class="col-2">
+                <a href="#" id="${apuesta.id}" class="elim" title="Eliminar" onclick="eliminar_apuesta(this.id)"><i class="material-icons">delete</i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-10">
+                <div class="open_Sans">${apuesta.jugada}</div>
+              </div>
+              <div class="col-2 open_Sans">${apuesta.indice}</div>
+            </div>
+          </div>`;
+    $("#apuestas_realizadas")[0].innerHTML += html_apuesta;
+    this.calcularPremio();
+}

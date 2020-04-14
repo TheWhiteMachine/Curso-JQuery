@@ -61,3 +61,32 @@ h1 {
     cursor: pointer;
     background-color: #dc3545;
 }
+
+#apuestas_realizadas .card {
+    margin-bottom: 0.5em;
+}
+
+.jugadas .input-group {
+    width: 80%;
+}
+
+.jugadas .card-title {
+    font-size: 1rem;
+    color: white;
+}
+
+.jugadas .card-header {
+    height: 49px;
+}
+
+.fondo_rojo {
+    background-color: #dc3545;
+}
+
+.elim {
+    color: #343a40;
+}
+
+.elim:hover {
+    color: #dc3545;
+}
