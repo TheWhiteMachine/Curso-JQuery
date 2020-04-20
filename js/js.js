@@ -49,6 +49,8 @@ $(document).ready(function() {
 let apuestas = [];
 let dividendo = 0;
 let premio = 0;
+let mapa = null;
+let mapaMarcador = null;
 
 function apostar(opcion, elem) {
     let ap = apuestas.filter(function(value) { return value.id_juego == elem.id; });
@@ -97,4 +99,22 @@ function calcularPremio() {
     let dineroApostado = $("#dinero_apuesta")[0].value;
     premio = dineroApostado * dividendo;
     $("#premio")[0].value = premio.toFixed(2);
+}
+
+// explicar desde aqui
+
+function eliminar_apuesta(elem) {
+    let ap = apuestas.filter(function(value) { return value.id == elem; })[0];
+    apuestas = apuestas.filter(function(value) { return value.id != elem; });
+    let element = document.getElementById('apuesta' + elem);
+    element.parentNode.removeChild(element);
+    let juego = document.getElementsByClassName(ap.id_juego * ap.indice)[0];
+    juego.classList.remove('fondo_rojo');
+    this.calcularPremio();
+}
+
+function cargarModal(juegoId) {
+    let juego = datos.filter(function(value) { return value.id == juegoId; })[0];
+    document.getElementById('titulo_modal').innerHTML = 'Estadio ' + juego.estadio;
+    document.getElementById('imagen_estadio').innerHTML = '<img src="' + juego.imagen + '" alt="Imagen del estadio">';
 }
