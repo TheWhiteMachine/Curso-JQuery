@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<script src="js/angular.min.js"></script>
+
+<body>
+    <div ng-app="miApp" ng-controller="miControlador">
+        <p>{{ apellido }} , {{ nombre }}</p>
+        <p>{{ apellido + ", " + nombre}}</p>
+
+        <select ng-model="departamento">
+            <option ng-repeat="dep in departamentos" value="{{dep}}">{{dep}}</option>
+        </select>
+    </div>
+
+    <script src="js/mijs.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="js/angular.min.js"></script>
+
+<body>
+    <div ng-app="" ng-init="color='lightcoral';
+        cantidad=5;
+        numero=3;
+        persona={nombre:'Pedro',apellido:'Picapiedra'};
+        numeros=[1,2,3,4,5];
+        departamentos=['Montevideo', 'Rocha', 'Canelones']">
+        <p>Color: <input type="text" ng-model="color"></p>
+        <p>Nombre: <input type="text" ng-model="nombre" style="background-color: {{ color }}"></p>
+        <p>Apellido: <input type="text" ng-model="apellido"></p>
+        <p>{{ persona.apellido + ", " + persona.nombre }}</p>
+
+        <p> La suma de dos numeros es {{ cantidad + numero }} </p>
+
+        <p>El segundo número es {{ numeros[1] }}</p>
+
+        <form style="border: 1px solid blue; border-radius: 5px; margin: 5px; padding: 5px">
+            <input ng-model="nombreApellido">
+            <select ng-model="departamento">
+                <option ng-repeat="dep in departamentos" value="{{dep}}">{{dep}}</option>
+            </select>
+            <input type="number" ng-model="edad">
+            <p>{{nombreApellido}} es del departamento {{departamento}} y tiene {{edad}} años de edad.</p>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+
+Fomulario input Nombre y Apellido Select Departamento
+<Montevideo, Rocha, Canelones>
+    input para la edad etiqueta párrafo la siguiente experesión:
+    <nombreApellido> es del departamento
+        <departamento> y tiene
+            <edad> años de edad.
