@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 9 de JQuery y AngularJS: Programación JavaScript</title>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/clase9.css">
+</head>
+
+<body>
+    <div ng-app="miApp" ng-controller="miCtrl">
+        <h1>{{ titulo }}</h1>
+        <h2>{{ fecha }}</h2>
+        <form method="post" name="miFormulario">
+            <label for="nombre">Nombre</label>
+            <input type="text" ng-model="nombre" id="nombre" name="nombre" required maxlength="50" minlength="5">
+            <span ng-show="miFormulario.nombre.$error.required">El campo es obligatorio.</span>
+
+            <br>
+
+            <label for="apellido">Apellido</label>
+            <input type="text" ng-model="apellido" id="apellido" name="apellido" required maxlength="50" minlength="5">
+            <span ng-show="miFormulario.apellido.$error.required">El campo es obligatorio.</span>
+
+            <br>
+
+            <label for="email">Email</label>
+            <input type="email" ng-model="email" name="email" id="email">
+            <span ng-show="miFormulario.email.$error.email">
+                Indique un email correcto.
+            </span>
+
+            <br>
+
+            <label for="depar">Departamento</label>
+            <select name="depar" id="depar" ng-model="departamento">
+                <option ng-repeat="x in departamentos | filter: 'ont'" value="{{x}}">{{x}}</option>
+            </select>
+
+            <br>
+
+            <label for="local">Localidad</label>
+            <select name="local" id="local" ng-model="localidad">
+                <option ng-repeat="x in localidades | orderBy:'localidad'" value="{{x.localidad}}">{{x.localidad}}</option>
+            </select>
+
+            <p>Estado</p>
+            Valid: {{ miFormulario.nombre.$valid }}
+            <br> Dirty: {{ miFormulario.nombre.$dirty }}
+            <br> Touched: {{ miFormulario.nombre.$touched }}
+
+            <br>
+            <p>{{ nombreCompleto() | uppercase }}</p>
+            <p>{{ nombreCompleto() | lowercase }}</p>
+            <p>{{ 4 | currency }}</p>
+
+            <!-- date -> filter -> json -> limitTo lowercase -->
+
+            <p>{{ url }}</p>
+
+            <p>{{ wel }}</p>
+
+            <p>{{ resultadoMiServicio }}</p>
+
+            <table>
+                <tr ng-repeat="x in personas | orderBy: 'apellido'">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ x.nombre | uppercase }}</td>
+                    <td>{{ x.apellido | uppercase }}</td>
+                </tr>
+            </table>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+    </div>
+    <script src="js/clase/clase.js"></script>
+</body>
+
+</html>
