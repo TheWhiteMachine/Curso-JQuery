@@ -1,5 +1,6 @@
 var app = angular.module('miApp', []);
-app.controller('miCtrl', function($scope, $location, $http, $timeout, $interval, miServicio) {
+var db = firebase.firestore();
+app.controller('miCtrl', function($scope, $location, $http, $timeout, $interval, servicioPersonas) {
     $scope.nombre = "Pedro";
     $scope.apellido = "Perez";
     $scope.email = "";
@@ -13,14 +14,6 @@ app.controller('miCtrl', function($scope, $location, $http, $timeout, $interval,
     $scope.localidad = "";
 
     $scope.url = $location.absUrl();
-
-    $http.get("http://www.miserver.com/api/Usuarios/getAll").then(
-        function(response) {
-            $scope.personas = response;
-        }
-    );
-
-    // firebase
 
     $scope.titulo = "Formulario inicial";
     // $timeout(function, intervaloTiempo);
@@ -44,18 +37,42 @@ app.controller('miCtrl', function($scope, $location, $http, $timeout, $interval,
     //     // algortimo
     // }
 
-    $scope.resultadoMiServicio = miServicio.getDato();
+    // $scope.resultadoMiServicio = miServicio.getDato();
 
-    $scope.personas = [
-        { nombre: 'Damian', apellido: 'Cervantes' },
-        { nombre: 'Pedro', apellido: 'Martinez' },
-        { nombre: 'Maria', apellido: 'Diaz' }
-    ];
+    // $scope.personas = [
+    //     { nombre: 'Damian', apellido: 'Cervantes' },
+    //     { nombre: 'Pedro', apellido: 'Martinez' },
+    //     { nombre: 'Maria', apellido: 'Diaz' }
+    // ];
 
+    // servicioPersonas.getAll().then(
+    //     function(response) {
+    //         $scope.personas = response;
+    //     }
+    // );
+
+    var personas = [];
+    servicioPersonas.getPersonas().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            personas.push(doc.data());
+        });
+    });
+    $scope.personas = personas;
 });
 
-app.service('miServicio', function() {
-    this.getDato = function() {
-        return 50;
+app.service('servicioPersonas', function() {
+    this.getPersonas = function() {
+        return db.collection("personas").get();
+        // return $http.get("http://www.miserver.com/api/Usuarios/getAll");
     };
+
+    this.agregar = function() {
+        // var usuario = { nombre: 'damian', apellido: 'cervantes' };
+        // return $http.post("http://www.miserver.com/api/Usuarios/Add", usuario);
+        // url => direccion_url_del_servidor + api + nombre_controlador + método
+    }
+
+    this.eliminar = function() {
+        // return $http.delete("http://www.miserver.com/api/Usuarios/Delete", personaId);
+    }
 });

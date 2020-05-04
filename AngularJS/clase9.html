@@ -10,6 +10,28 @@
 </head>
 
 <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCORV_2OSx0io4HiVNtKOK1OHhuqloIKzE",
+            authDomain: "cursojs-49662.firebaseapp.com",
+            databaseURL: "https://cursojs-49662.firebaseio.com",
+            projectId: "cursojs-49662",
+            storageBucket: "cursojs-49662.appspot.com",
+            messagingSenderId: "1060672792015",
+            appId: "1:1060672792015:web:540cb6c77ec246f61e1eba"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.firestore();
+    </script>
     <div ng-app="miApp" ng-controller="miCtrl">
         <h1>{{ titulo }}</h1>
         <h2>{{ fecha }}</h2>
