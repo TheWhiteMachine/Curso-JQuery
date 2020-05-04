@@ -62,7 +62,7 @@ app.controller('miCtrl', function($scope, $location, $http, $timeout, $interval,
 
 app.service('servicioPersonas', function() {
     this.getPersonas = function() {
-        return db.collection("personas").get();
+        // return db.collection("personas").get();
         // return $http.get("http://www.miserver.com/api/Usuarios/getAll");
     };
 
