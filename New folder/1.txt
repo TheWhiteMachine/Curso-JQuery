@@ -1,0 +1,38 @@
+1. ¿Dentro de qué elemento HTML ponemos el JavaScript?
+<script></script>
+
+2. ¿Cuál es la sintaxis correcta de JavaScript para cambiar el contenido del elemento HTML a continuación?    
+    a. <p id = "demo"> Esta es una demostración. </p>
+
+3.  ¿Dónde está el lugar correcto para insertar un JavaScript?
+
+4.  ¿Cuál es la sintaxis correcta para referirse a un script externo llamado "xxx.js"?
+
+
+5.  El archivo JavaScript externo debe contener la etiqueta <script>.
+
+6.  ¿Cómo se escribe "Hola mundo" en un cuadro de alerta?
+
+7.  ¿Cómo se crea una función en JavaScript?
+
+8.  ¿Cómo se llama a una función llamada "myFunction"?
+
+9.  ¿Cómo escribir una declaración IF en JavaScript?
+
+10. ¿Cómo escribir una declaración IF para ejecutar algún código si "i" NO es igual a 5?
+
+11. ¿Cómo comienza un ciclo WHILE?
+
+12. ¿Cómo comienza un bucle FOR?
+
+13. ¿Cómo puedes agregar un comentario en un JavaScript?
+
+14. ¿Cómo insertar un comentario que tiene más de una línea?
+
+15. ¿Cuál es la forma correcta de escribir un arreglo de JavaScript?
+
+16. ¿Qué evento ocurre cuando el usuario hace clic en un elemento HTML?
+
+17. ¿Cómo se declara una variable de JavaScript?
+
+18. ¿Qué operador se usa para asignar un valor a una variable?

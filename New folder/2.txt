@@ -1,0 +1,15 @@
+1. JQuery es una biblioteca de JSON?
+2. ¿jQuery usa selectores CSS para seleccionar elementos?
+3. ¿Qué signo usa jQuery como acceso directo para jQuery?
+4. Mire el siguiente selector: $("div"). ¿Qué selecciona?
+5. ¿Es jQuery una biblioteca para scripts de cliente o scripts de servidor?
+6. ¿Es posible usar jQuery junto con AJAX?
+7. ¿Cuál es el código jQuery correcto para establecer el color de fondo de todos los elementos p en rojo?
+8. Con jQuery, mira el siguiente selector: $("div.intro"). ¿Qué selecciona?
+9. ¿Qué método jQuery se usa para ocultar los elementos seleccionados?
+10. ¿Qué método jQuery se usa para establecer una o más propiedades de estilo para los elementos seleccionados?
+11. ¿Cuál es el código jQuery correcto para hacer que todos los elementos div tengan una altura de 100 píxeles?
+12. ¿En qué lenguaje de script está escrito jQuery?
+13. ¿Qué función jQuery se usa para evitar que el código se ejecute antes de que el documento termine de cargarse?
+14. Mire el siguiente selector: $ ("div p"). ¿Qué selecciona?
+15. Mire el siguiente selector: $ ("p#intro"). ¿Qué selecciona?
