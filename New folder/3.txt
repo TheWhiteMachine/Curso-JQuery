@@ -1,0 +1,11 @@
+A partir del siguiente código base de HTML, realice las modificaciones necesarias para que,
+utilizando AngularJS se puedan realizar las siguientes acciones:
+a. El select del formulario reciba sus opciones desde una variable.
+b. Todos los datos del formulario sean accesibles desde javascript.
+c .Implemente una función para que si el usuario introduce una edad menor a 18,
+se muestre un mensaje debajo del campo edad => “Usuario menor de edad”.
+d. Una vez el usuario introduzca todos los datos y seleccione la opción enviar, 
+se muestre en el div con id “notificacion” un texto bajo el esquema:
+Estimado ____________________, usted se agendó para el trámite ___________________ 
+para el próximo día __________________.
+e. Muestre una tabla en el div con id “tabla” con los datos de las citas que se van agendando.
